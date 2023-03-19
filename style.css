@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+:root {
+  --balmoresColor: #38FFF5;
+  --balmoresImage: url("https://i.ibb.co/4K2xKmR/balmores1.png");
+  --balmoresLetters: #dafffd;
+  
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: 'IBM Plex Mono', sans-serif;
+  color: white;
+  font-size: 14px;
+}
+
+body {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+/*   flex-direction: column; */
+  flex-direction: row;
+  align-items: center;
+}
+.menu {
+  width: 220px;
+}
+.menu>button {
+  width: 120px;
+  height: 40px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  background-color: transparent;
+  background-image:url(https://i.ibb.co/xhm6r0p/balmores2.png);
+  background-size: contain;
+  background-repeat:no-repeat;
+  transition: width 0.3s;
+  border: none;
+}
+.menu>.btn:hover {
+  color:var(--balmoresColor);
+  background-color: transparent;
+  box-shadow: none;
+  width: 140px;
+}
+
+.scene {
+  width: 600px;
+  height: 600px;
+  perspective: 1800px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style:preserve-3d;
+  transform: translateZ(-300px);
+  transition: transform 1s;
+}
+
+.cube.show-front {
+  transform: translateZ(-300px) rotateY(0deg);
+}
+.cube.show-right {
+  transform: translateZ(-300px) rotateY(-90deg);
+}
+.cube.show-back {
+  transform: translateZ(-300px) rotateY(-180deg);
+}
+.cube.show-left {
+  transform: translateZ(-300px) rotateY(90deg);
+}
+.cube.show-top {
+  transform: translateZ(-300px) rotateX(-90deg);
+}
+.cube.show-bottom {
+  transform: translateZ(-300px) rotateX(90deg);
+}
+
+.df.fd-c {
+  display: flex;
+  flex-direction: column;
+}
+.df.fd-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.cube-face {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  padding: 40px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: rgba(0,0,0,0.8);
+  background-image:var(--balmoresImage);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cube-face-front {
+  transform: rotateY(0deg) translateZ(300px);
+  
+}
+
+.intro-wrapper {
+/*   display: flex; */
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border: 1px dashed var(--balmoresColor);
+/*   display: flex; */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-wrapper {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 140px;
+  object-fit:cover;
+}
+
+.intro {
+  width: 70%;
+  margin-left: 20px;
+}
+
+.intro-heading {
+  font-size: 3rem;
+  font-family: 'IBM Plex Mono', monospace;
+  width: 100%;
+  color: var(--balmoresLetters);
+  padding-bottom: 20px;
+  line-height: 3rem;
+}
+
+.intro-heading>span {
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--balmoresColor);
+}
+
+.intro-text {
+  color: var(--balmoresLetters);
+  width: 90%;
+  padding: 5px 0;
+}
+
+.buttons>button {
+  color: var(--balmoresLetters);
+  border: 2px solid var(--balmoresColor);
+  background-color: transparent;
+  padding: 5px 5px;
+  margin: 5px;
+  box-shadow: 0 0 10px var(--balmoresColor);
+  transition: box-shadow 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--balmoresColor);
+  background-color: var(--balmoresColor);
+}
+
+.cube-face-back {
+  transform: rotateY(180deg) translateZ(300px);
+}
+.work-edu-section {
+  margin-bottom: 40px;
+}
+.work-edu-heading {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+.work-edu-heading>i {
+  font-size: 1.2rem;
+  color: var(--balmoresColor);
+}
+.work-edu-heading.date {
+  color: var(--balmoresColor);
+}
+.work-edu-info {
+  width: 70%;
+  margin-left: 20px;
+}
+.work-edu-info>ul {
+  margin-left: 20px;
+}
+.work-edu-heading.company {
+  width: 100%;
+}
+
+.cube-face-right {
+  transform: rotateY(90deg) translateZ(300px);
+}
+
+.cube-face-left {
+  transform: rotateY(-90deg) translateZ(300px);
+}
+
+.cube-face-top {
+  transform: rotateX(90deg) translateZ(300px);
+}
+.cube-face-bottom {
+  transform: rotateX(-90deg) translateZ(300px);
+}
+.social-media-btns {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.social-media-btns>i {
+  font-size: 2rem;
+  margin: 5px 10px;
+}
+.social-media-btns>i:hover {
+  cursor: pointer;
+  color: var(--balmoresColor);
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.project-border {
+  width: 120px;
+  height: 120px;
+  background-image: url("https://i.ibb.co/JcPnY8j/balmores3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.project-wrapper {
+  width: 90px;
+  height: 90px;
+}
+
+.visit-wrapper {
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-border:nth-of-type(1)>.project-wrapper {
+  background-image: url("https://cdn.pixabay.com/photo/2022/12/10/21/41/social-media-7647812_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.project-border:nth-of-type(2)>.project-wrapper {
+  background-image: url("https://cdn.pixabay.com/photo/2019/11/07/20/48/cinema-4609877_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.project-border:nth-of-type(3)>.project-wrapper {
+  background-image: url("https://cdn.pixabay.com/photo/2017/02/15/13/40/tulips-2068692_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.project-border:nth-of-type(4)>.project-wrapper {
+  background-image: url("https://cdn.pixabay.com/photo/2015/09/03/17/50/cobweb-921039_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.project-border:nth-of-type(5)>.project-wrapper {
+  background-image: url("https://cdn.pixabay.com/photo/2016/02/27/12/40/sculpture-1225487_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.project-border:nth-of-type(6)>.project-wrapper {
+  background-image: url("https://cdn.pixabay.com/photo/2016/10/13/15/23/labyrinth-1738039_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app-title {
+  background-color: rgba(0,0,0,0.7);
+  padding: 3px 7px;
+  margin-bottom: 10px;
+}
+
+.visit-app {
+  background-color: rgba(0,0,0,0.7);
+  padding: 5px 5px;
+}
+.visit-app:hover {
+  text-decoration: underline;
+}
+
+.visit-app,
+.visit-app>i {
+  font-size: 0.8rem;
+}
+
+.visit-app>i {
+  color: var(--balmoresColor);p
+}
+
+.certificate-section {
+  width: 80%;
+  justify-content: start;
+  align-items: center;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.cube-face-left > div:nth-last-of-type(2) {
+  margin-bottom: 20px;
+}
+
+.certificate-date {
+  font-size: 1.5rem;
+  color: var(--balmoresColor);
+}
+.certificate-heading {
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+/* Mobile devices */
+@media only screen and (max-width: 767px) {
+  .main-content {
+    display: none;
+  }
+
+.not-available {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.not-available-text {
+  color: var(--balmoresColor);
+  border-right: 2px solid var(--balmoresColor);
+  overflow: hidden;
+}
+
+/* Add this media query */
+@media (max-width: 767px) {
+  .not-available {
+    display: flex;
+  }
+}
+
+/* Desktop and other devices */
+@media only screen and (min-width: 768px) {
+  .not-available {
+    display: none;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--balmoresColor);
+  }
+}
+audio {
+    display: none;
+  }
+
